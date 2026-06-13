@@ -1,0 +1,81 @@
+# ── Environment & secrets (NEVER commit these) ───────────────────
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+.env.staging
+*.env
+
+# ── Node — both frontend and backend ─────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+.npm/
+.yarn/
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# ── Next.js (frontend/) ──────────────────────────────────────────
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/.vercel/
+frontend/.turbo/
+
+# Next.js cache
+frontend/.next/cache/
+
+# Standalone output (Docker build artifact — not source)
+frontend/.next/standalone/
+frontend/.next/static/
+
+# ── Express / backend build (backend/) ──────────────────────────
+backend/dist/
+backend/build/
+backend/coverage/
+backend/.nyc_output/
+
+# ── Logs ─────────────────────────────────────────────────────────
+logs/
+*.log
+*.log.*
+frontend/logs/
+backend/logs/
+
+# ── Testing ──────────────────────────────────────────────────────
+coverage/
+frontend/coverage/
+backend/coverage/
+.nyc_output/
+*.lcov
+jest-results/
+test-results/
+playwright-report/
+playwright/.cache/
+
+# ── TypeScript ───────────────────────────────────────────────────
+*.tsbuildinfo
+frontend/next-env.d.ts
+# keep tsconfig.json — it's source
+
+# ── Package manager locks (keep one, ignore others) ──────────────
+# Uncomment the lock file your project does NOT use:
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# ── Docker ───────────────────────────────────────────────────────
+# Keep Dockerfile and docker-compose.yaml — they are source.
+# Ignore runtime/generated Docker artifacts:
+.docker/
+docker-compose.override.yml
