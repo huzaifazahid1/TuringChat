@@ -1,24 +1,6 @@
 /**
- * GAME HANDLERS DISPATCHER (FINAL — Batch 4 rewire)
- * ─────────────────────────────────────────────────────────────────
- * This is the central socket event dispatcher. After Batch 4, it:
- *
- *   1. Imports per-game handlers from socket/games/*.ts
- *   2. Uses the atomic matchOrEnqueue from matchmaking.ts
- *   3. Uses shared activeGames/pendingAIMatches from gameUtils.ts
- *   4. Routes events to the correct game-specific handler by gameType
- *   5. Wires handleSocketDisconnect for proper forfeit on disconnect
- *
- * BEFORE this batch: gameHandlers.ts had 800+ lines with all per-game logic
- *                    inline (turing, word-forge, debate, imposter, interrogation).
- *                    Maintainability was poor.
- *
- * AFTER: ~200 lines of pure dispatch. Each game's logic lives in its own module.
- *
- * IMPORTANT: This file REPLACES the previous gameHandlers.ts entirely.
- *            All old per-game functions (handleTuringMessage inline,
- *            startTuringHumanVsHumanGame inline, etc.) are GONE — they
- *            now live in their respective socket/games/*.ts modules.
+ * GAME HANDLERS DISPATCHER 
+
  */
 
 import type { Namespace, Socket } from 'socket.io';
